@@ -66,6 +66,24 @@ class KegControl extends React.Component {
     });
   }
 
+  handleSellingPint = (sell) => {
+    const selectedKeg = this.state.selectedKeg;
+    let newQuantity;
+    if (sell) {
+      newQuantity = Object.assign({}, selectedKeg, { quantity: parseInt(selectedKeg.quantity) + 1});
+    } else {
+      newQuantity = Object.assign({}, selectedKeg, { quantity: parseInt(selectedKeg.quantity) - 1});
+    }
+
+    const newKegList = this.state.masterKegList
+      .filter(keg => keg.id !== this.state.selectedKeg.id)
+      .concat(newQuantity);
+    this.setState({
+      masterKegList: newKegList,
+      selectedKeg: newQuantity
+    });
+  }
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -74,7 +92,7 @@ class KegControl extends React.Component {
       currentlyVisibleState = <EditKegForm keg = {this.state.selectedKeg} onEditKeg = {this.handleEditingKegInList}/>
       buttonText = "Return to Keg List";
     } else if (this.state.selectedKeg != null) {
-      currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} onClickingDelete = {this.handleDeletingKeg} onClickingEdit = {this.handleEditClick}/>
+      currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} onClickingDelete = {this.handleDeletingKeg} onClickingEdit = {this.handleEditClick} onClickingSell={this.handleSellingPint}/>
       buttonText = "Return to Keg List";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList}/>
