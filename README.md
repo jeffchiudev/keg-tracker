@@ -28,7 +28,7 @@ Taprooms have to have a great selection, but they also need to be able to manage
 
 - Windows 10
 - Visual Studio Code
-- React Native
+- React
 - Javascript
 - [Draw.io](https://www.draw.io/)
 
