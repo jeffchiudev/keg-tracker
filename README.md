@@ -18,11 +18,11 @@ Taprooms have to have a great selection, but they also need to be able to manage
 
 | ID | User Story | Accepted |
 | :--------: | :------: | :-------: |
-| US01 | As user I want to see a keg list with name, brand, price and EtOH content | false |
-| US02 | As a user I want to submit a form for a new keg | false |
-| US03 | As a user I want to be able to click on a keg to see keg details | false |
-| US04 | As a user I want to be able to see how many kegs are left | false |
-| US05 | As a user I want to be able to click a button to decrease the number of pints by 1 | false |
+| US01 | As user I want to see a keg list with name, brand, price and EtOH content | true |
+| US02 | As a user I want to submit a form for a new keg | true |
+| US03 | As a user I want to be able to click on a keg to see keg details | true |
+| US04 | As a user I want to be able to see how many kegs are left | true |
+| US05 | As a user I want to be able to click a button to decrease the number of pints by 1 | true |
 
 ### 🕹️Technologies Used
 
